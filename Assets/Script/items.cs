@@ -5,6 +5,7 @@ using UnityEngine;
 public class items : MonoBehaviour
 {
     public float restaurarvida = 1.0f;
+    public dañoandvida Aumento;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,8 @@ public class items : MonoBehaviour
     {
         if (hit.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject,restaurarvida);
+            Aumento.Aumentolife();
+            Destroy(this.gameObject);
         }
     }
 }

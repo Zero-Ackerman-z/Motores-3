@@ -6,6 +6,7 @@ public class EnemyC : MonoBehaviour
     public float visionRange = 5f; // Alcance de visión del enemigo.
     public Transform player;
     public LayerMask playerLayer; // Layer del jugador (asignado en el Inspector).
+    public dañoandvida disminuir;
 
     private Rigidbody2D rb;
 
@@ -42,9 +43,12 @@ public class EnemyC : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         // Verifica si la colisión es con el jugador.
         if (collision.gameObject.layer == playerLayer)
         {
+            disminuir.DisminucionLife();
+
             // Detén el movimiento al chocar con el jugador.
             rb.velocity = rb.velocity * 0.0f;
 
