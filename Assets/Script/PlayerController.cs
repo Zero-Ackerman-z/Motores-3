@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
 
+    public delegate void MyDelegate();
+    public event MyDelegate Muerto;
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpForce = 5f;
 
